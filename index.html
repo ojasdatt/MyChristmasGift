@@ -1,0 +1,336 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Our Family Christmas Book — Made by OJ</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+
+:root {
+  --green: #0E5E3D;
+  --gold: #D9A441;
+  --ink: #111;
+  --bg: #fff;
+  --page: #f7f7f7;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Georgia, serif;
+}
+
+.book {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 12px 32px 20px rgba(0,0,0,1);
+}
+
+header.cover {
+  background: var(--green);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  position: relative;
+}
+
+header.cover .frame {
+  max-width: 760px;
+  margin: 1.25rem auto 0;
+  border: 2px solid var(--gold);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+nav.toc {
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  padding: 1rem;
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+nav.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--green);
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  background: #fafafa;
+}
+
+section.chapter { padding: 2rem 1rem; }
+
+section.chapter h2 {
+  color: var(--green);
+  margin: .25rem 0 1rem;
+  font-size: 1.8rem;
+}
+
+.class {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 1.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  align-items: start;
+}
+
+.grid figure {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.grid figcaption {
+  padding: .5rem;
+  font-size: .95rem;
+  color: #333;
+}
+
+.tree {
+  width: 200px;
+  height: 250px;
+  padding: 2rem;
+  border: 1px solid goldenrod;
+}
+body {
+ background-image: url(Back.png);
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+}
+.Fun{
+ color:whitesmoke ;
+ background-color: gray;
+ font-family: 'Courier New', Courier, monospace;
+}
+.Fun:hover{
+ color: gray;
+ background-color: whitesmoke;
+}
+.rectangle {
+  color: whitesmoke;
+  background-color: gray;
+  width: 300px;
+  height: 150px;
+  font-size: larger;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px black;
+}
+
+  </style>
+</head>
+
+<body>
+  <main class="book" id="book">
+    <header class="cover">
+      <h1 class="title">Our Family Christmas Book</h1>
+      <p class="subtitle">Traditions, greatest times, and a timeless keepsake!</p>
+      <div class="frame">
+        <p>“Thank you for every little thing you do. You raised me with all your heart, and I've grown to be your smart, loving kid!”</p>
+      </div>
+      <p class="credit">Made by Aaryan • 2025</p>
+    </header>
+
+    <!-- contents -->
+
+    <section class="chapter" id="traditions">
+      <h2>Traditions</h2>
+      <p class="class" id="traditionsclass"></p>
+      <div class="grid" id="traditionsGrid"></div>
+    </section>
+
+    <section class="chapter" id="greatest">
+      <h2>Greatest Hits</h2>
+      <p class="class" id="greatestclass"></p>
+      <div class="grid" id="greatestGrid"></div>
+    </section>
+
+    <section class="chapter" id="letters">
+      <h2>Letters to Mama &amp; Papa</h2>
+      <div class="letter" id="lettersContent"></div>
+      <p class="note"></p>
+    </section>
+
+    <section class="chapter" id="Yuvaan">
+      <h2>Letter to Yuvaan</h2>
+      <div class="letter" id="lettersContentYuvaan"></div>
+      <p class="note"></p>
+    </section>
+
+    <section class="chapter" id="Recipe">
+      <h2>Our hot choclate recipe!</h2>
+      <p class="class" id="recipeClass"></p>
+      <div class="grid" id="recipeGrid"></div>
+      <p class="note"></p>
+    </section>
+
+    <section class="chapter" id="Bucket-list">
+      <h2>Our Chrismtas bucket-list for this year!</h2>
+      <p class="class" id="bucketListClass"></p>
+      <div class="grid" id="bucketListGrid"></div>
+      <div class="qr-wrap"><div></div></div>
+    </section>
+    <!--Joke-->
+
+    <center><div class="rectangle">Why did the elf go to music school? <br> So he could improve his wrap skills! <br> Ha Ha Ha; or should I say<br>Ho Ho Ho</div></center><br><br>
+    <footer> &nbsp; Coded with love • Merry Christmas, and a happy new year! 2025 ➡️ 2026 °🥂⋆.ೃ🍾࿔*:･ </footer>
+
+  </main>
+
+<script>
+
+const BOOK = {
+  traditions: {
+    class: "Little things we do every year to bring the joy into OUR Christmas ────୨ৎ────",
+    items: [
+      { photo: "Family.png", caption: "Watching Klaus on Christmas Eve. 💝 (story time): I remember us sitting together in the old house, in the basement watching Klaus (of course!), and eating candy canes!" },
+      { photo: "Treat.jpg", caption: "❄︎ Buying all the limited-edition Christmas treats. (story time): Recently, I ate a whole row of cookies from the Chips Ahoy Christmas packs!" },
+      { photo: "Tree.jpg", caption: "🎄🎀 Decorating the tree. (story time): We hung up our old Christmas crafts, and you put them at the back of the tree. Ps: How could you Mama!" },
+      { photo: "Fire.png", caption: "Lighting the fireplace and talking. (story time): When Papa was lighting the fireplace, I saw 2 things he was using as FUEL: my drawings and my wooden train!" },
+      { photo: "Gifts.png", caption: "Opening gifts on Christmas day. 🎁 (story time): When we were opening gifts, I got The Gruffalo book, which you used to read to me a lot!" },
+      { caption: "🦌🛷 I love Christmas traditions because they make the holidays feel timeless! 🧣 Plus, it's the only time when eating candy canes and hot chocolate is acceptable! ☃️" }
+    ]
+  },
+
+  greatest: {
+    class: "Moments we still talk about! ˙✧˖°📸⋆｡˚",
+    items: [
+      { photo: "PJ.webp", caption: "2024: We wore pyjamas with the tags still on, and you took pictures of us in them! 👘" },
+      { photo: "Cookies.jpg", caption: "2024 (again): Went to Canada's Wonderland Christmas events with Tina masi, where we made Christmas cookies! 🍪" },
+      { photo: "Light.jpg", caption: "2023: ✨ Went to a Christmas light festival (one of the best drives ever!)" }
+    ]
+  },
+
+  Recipe: {
+    class: "Our sugary, sweet recipe that we could have daily!",
+    items: [
+      { caption: "Step 1: Add hot milk in a mug ୧ ‧₊˚ 🥛 ⋅ ☆" },
+      { caption: "Step 2: Add hot chocolate bomb with marshmallows 🍡 💣" },
+      { caption: "Step 3: Put a candy cane" },
+      { photo: "Choc.jpg", caption: "Step 4: Drink and enjoy! 🥳" }
+    ]
+  },
+
+  letters: {
+    html: `
+Dear Mama & Papa,
+
+HAPPY HOLIDAYS ₊˚⊹♡
+
+You guys are the best gift I could've ever asked for! You treat us with love and care always.
+
+I just hope you know how much I appreciate and love you guys. Thank you for always making us feel special.
+
+I’m very proud to be your child.🏠❤️
+
+Love, Aaryan
+`
+  },
+
+  Yuvaan: {
+    html: `
+Dear Yuvaan,
+
+HAPPY HOLIDAYS ⋆˙⟡
+
+You are the best brother in the whole world! You always play with me and make me laugh.
+
+Even though we fight, I will always love you. You’ve always been someone I can count on, and I hope you know how deeply.  
+
+I appreciate you — not just today, but every day!🫂
+
+Love, Aaryan
+`
+ },
+
+  bucketList: {
+    class: "fun things we're going to do, this special Christmas!",
+    items: [
+      { photo: "cool.jpg", caption: "Stranger things marathon (if it doesn't crash)!" },
+      { photo: "Snack.avif", caption: "Bake treats together!" },
+      { photo: "Relax.png", caption: "Have fun, and relax!" }
+    ]
+  }
+};
+
+function renderGrid(containerId, items) {
+  const grid = document.getElementById(containerId);
+  if (!grid) return;
+
+  grid.innerHTML = "";
+
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    const figure = document.createElement("figure");
+
+    if (item.photo) {
+      const img = document.createElement("img");
+      img.src = item.photo;
+      img.alt = item.caption ? item.caption : "";
+      figure.appendChild(img);
+    }
+
+    const caption = document.createElement("figcaption");
+    caption.innerHTML = sanitize(item.caption ? item.caption : "");
+    figure.appendChild(caption);
+
+    grid.appendChild(figure);
+  }
+}
+
+
+function sanitize(s) {
+  if (!s) return '';
+  let out = s.replace(/&/g, '&amp;')
+             .replace(/</g, '&lt;')
+             .replace(/>/g, '&gt;');
+
+  out = out.replace(/\n/g, '<br>');
+  return out;
+}
+
+function formatTextWithBreaks(s) {
+  if (!s) return '';
+  return s.replace(/\n{2,}/g, '<br><br>').replace(/\n/g, '<br>');
+}
+
+document.getElementById('traditionsclass').textContent = BOOK.traditions.class;
+renderGrid('traditionsGrid', BOOK.traditions.items);
+
+document.getElementById('greatestclass').textContent = BOOK.greatest.class;
+renderGrid('greatestGrid', BOOK.greatest.items);
+
+document.getElementById('lettersContent').innerHTML = formatTextWithBreaks(BOOK.letters.html);
+document.getElementById('lettersContentYuvaan').innerHTML = formatTextWithBreaks(BOOK.Yuvaan.html);
+
+document.getElementById('recipeClass').textContent = BOOK.Recipe.class;
+renderGrid('recipeGrid', BOOK.Recipe.items);
+
+document.getElementById('bucketListClass').textContent = BOOK.bucketList.class;
+renderGrid('bucketListGrid', BOOK.bucketList.items);
+
+</script>
+
+</body>
+</html>
